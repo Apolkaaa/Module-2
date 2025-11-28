@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+/* стили для animation.css */
+.box {
+  width: 8vw;
+  height: 8vw;
+  background-color: grey;
+  animation-name: color_change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation: color_change 2s linear infinite alternate;
+}
+.linear {
+  animation-timing-function: linear;
+}
+.ease {
+  animation-timing-function: ease;
+}
+.ease-in {
+  animation-timing-function: ease-in;
+}
+.ease-out {
+  animation-timing-function: ease-out;
+}
+.step_start {
+  animation-timing-function: step-start;
+}
+.box_to_circle {
+  background-color: grey;
+  width: 14vw;
+  height: 8vw;
+  animation: box_to_circle 3s infinite ease alternate;
+}
+
+/* стили для index.html */
+/* стили для марио */
+.mario {
+  margin-top: 60px;
+  width: 68px;
+  height: 68px;
+  background-image: url("../images/mario-walk-n-jump-68.png");
+  animation: mario_walk 0.5s steps(1) infinite, mario_move 4s linear infinite;
+}
+.mario::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/mario-walk-n-jump-68.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: mario_jump 4s linear infinite;
+  background-position: -272px top;
+}
+
+/* анимация взрыва */
+.blast {
+  width: 151px;
+  height: 151px;
+  background-image: url("../images/blast-151.png");
+  animation: blast 3s steps(1) infinite;
+}
+
+.emoji {
+  width: 160px;
+  height: 160px;
+  background-image: url("../images/emoji-160.png");
+  position: relative;
+}
+.eyes,
+.mouth {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/emoji-160.png");
+}
+.eyes {
+  background-position: -640px top;
+}
+.mouth {
+  background-position: -160px top;
+}
+.anim_eyes_1 {
+  animation: eyes 3s steps(1) infinite;
+}
+.anim_eyes_2 {
+  animation: eyes 3s steps(1) infinite alternate;
+}
+.anim_eyes_3 {
+  animation: eyes 3s steps(1) infinite reverse;
+}
+.anim_mouth_1 {
+  animation: eyes 3s steps(1) infinite;
+}
+.anim_mouth_2 {
+  animation: eyes 3s steps(1) infinite alternate;
+}
+.anim_mouth_3 {
+  animation: eyes 3s steps(1) infinite reverse;
+}
+.emoji:hover {
+  transition: all 2s ease;
+}
+.emoji:nth-last-of-type(1):hover {
+  transform: rotate(-360deg);
+}
+.emoji:nth-last-of-type(2):hover {
+  transform: scale(0.2);
+}
+.emoji:nth-last-of-type(1):hover {
+  transform: translate(20px 20px);
+}
